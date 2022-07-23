@@ -1,0 +1,23 @@
+{
+  "name": "cypress-program-guide-demo",
+  "version": "1.0.0",
+  "description": "for debugging a test that fails in headless chrome, but succeeds otherwise.",
+  "main": "index.js",
+  "scripts": {
+    "cy:open:prod": "cypress open -C cypress/config/prod.env.config.js --e2e --browser=chrome"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/constantlyk/cypress-program-guide-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/constantlyk/cypress-program-guide-demo/issues"
+  },
+  "homepage": "https://github.com/constantlyk/cypress-program-guide-demo#readme",
+  "devDependencies": {
+    "cypress": "^10.3.1"
+  }
+}
