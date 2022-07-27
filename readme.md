@@ -18,6 +18,7 @@ the test *does* succeed when run headlessly with electron, and also succeeds whe
 
 ## possible suspects and other clues
 * updated to add partial debug logs for [headless](https://pastebin.com/HSJJjxDi) and [headed](https://pastebin.com/HnAiRbqf) runs (`DEBUG=cypress:http*`). it seems that headless requests possibly use a different host than headed requests, but not sure if that matters.
+* updated to further add full debug logs; find them in `headlesstest` and `headedtest`.
 * the meetings page "redirect": never happens when the test fails. is it failing because it's getting stuck on the redirect, or is it failing even before that? (i don't think it's a true 301 redirect, if that matters.)
 * the graphql request: i haven't included it here, but the original version of this test intercepts and waits on the request that fetches the page data. that request is definitely not being fired. is the test failing before it gets the chance to send this?
 * `modifyObstructiveCode` and `chromeWebSecurity`: if i set these to false in `cypress.config.js` in this repo, they don't seem to have any effect. (i haven't included them right now for simplicity.) in the original file, which contained two tests, the *first* test in every run using the test runner would fail with this same blank page issue, and print a MIME-related error to the browser console. setting `modifyObstructiveCode: false` did seem to resolve that error when running in the test runner, but has had no effect on headless chrome runs.
