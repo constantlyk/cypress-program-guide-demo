@@ -1,6 +1,6 @@
 well, now there are two bugs in this repo!
-1. [the test that fails in headless chrome](#the-test-that-fails-in-headless-chrome)
-2. [the "terribly wrong" error](#the-terribly-wrong-error)
+1. [**the test that fails in headless chrome**](#the-test-that-fails-in-headless-chrome) | [link to github discussion](https://github.com/cypress-io/cypress/discussions/22947) | [link to discord thread](https://discord.com/channels/755913899261296641/1001162684181528676)
+2. [**the "terribly wrong" error**](#the-terribly-wrong-error) | [link to ticket: #22977](https://github.com/cypress-io/cypress/issues/22977)
 
 # the test that fails in headless chrome
 ... but succeeds otherwise.
@@ -14,7 +14,7 @@ npx cypress run --e2e --browser=chrome -C cypress/config/prod.env.config.js --sp
 ```
 
 ### expected result
-`meetings.asco.org` opens, redirects to `meetings.asco.org/meetings/2022-best-of-asco-new-orleans/290/program-guide/scheduled-sessions`, and page contents load. and this should work headed and headlessly, in chrome and electron.
+`https://meetings.asco.org` opens, redirects to `https://meetings.asco.org/meetings/2022-best-of-asco-washington/291/program-guide/scheduled-sessions`, and page contents load. and this should work headed and headlessly, in chrome and electron.
 
 ### observed result
 when running headlessly with chrome, `meetings.asco.org` opens, but no redirect occurs, and page contents do not load. the graphql request that should return the page data is never sent. strangely, the cookie policy popup *does* load and display.
